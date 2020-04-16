@@ -7,7 +7,7 @@ use x11rb::generated::xproto::*;
 use x11rb::wrapper::ConnectionExt as _;
 use x11rb::x11_utils::Event;
 
-// Lifted from XCB
+// Lifted from XCB headers, see https://github.com/psychon/x11rb/issues/164
 #[allow(dead_code)]
 enum IcccmWmState {
     Withdrawn = 0,
