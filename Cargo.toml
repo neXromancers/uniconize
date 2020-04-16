@@ -1,0 +1,11 @@
+[package]
+name = "uniconize"
+description = "A workaround for Wine games blackscreening on sway"
+version = "0.1.0"
+authors = ["Dan Elkouby <streetwalkermc@gmail.com>"]
+edition = "2018"
+license = "MPL-2.0"
+repository = "https://github.com/9ary/uniconize"
+
+[dependencies]
+x11rb = "0.4"
