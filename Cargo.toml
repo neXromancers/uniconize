@@ -7,5 +7,7 @@ edition = "2018"
 license = "MPL-2.0"
 repository = "https://github.com/9ary/uniconize"
 
-[dependencies]
-x11rb = "0.4"
+[dependencies.x11rb]
+version = "0.4"
+default-features = false
+features = ["vendor-xcb-proto"]

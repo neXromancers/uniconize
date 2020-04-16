@@ -58,6 +58,5 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ca6dd4c5e6edd84edeaddb13be025c1992870220e892424b845121ff40b8d553"
 dependencies = [
  "gethostname",
- "libc",
  "pkg-config",
 ]
