@@ -45,7 +45,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         event.window,
                         atoms.WM_STATE,
                         atoms.WM_STATE,
-                        &[IcccmWmState::Normal as u32, 0],
+                        &[IcccmWmState::Normal as u32, x11rb::NONE],
                     )?;
                     conn.flush()?;
                 }
