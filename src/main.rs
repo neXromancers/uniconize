@@ -3,8 +3,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 use x11rb::connection::Connection;
-use x11rb::wrapper::ConnectionExt as _;
 use x11rb::generated::xproto::*;
+use x11rb::wrapper::ConnectionExt as _;
 use x11rb::x11_utils::Event;
 
 // Lifted from XCB
@@ -14,7 +14,6 @@ enum IcccmWmState {
     Normal = 1,
     Iconic = 3,
 }
-
 
 x11rb::atom_manager! {
     AtomCollection: AtomCollectionCookie {
@@ -29,8 +28,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let atoms = AtomCollection::new(&conn)?.reply()?;
 
-    let attrs = ChangeWindowAttributesAux::new()
-        .event_mask(EventMask::SubstructureNotify);
+    let attrs = ChangeWindowAttributesAux::new().event_mask(EventMask::SubstructureNotify);
     conn.change_window_attributes(screen.root, &attrs)?;
     conn.flush()?;
 
@@ -40,18 +38,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             CLIENT_MESSAGE_EVENT => {
                 let event: ClientMessageEvent = event.into();
                 if event.type_ == atoms.WM_CHANGE_STATE
-                    && event.data.as_data32()[0] == IcccmWmState::Iconic as u32 {
+                    && event.data.as_data32()[0] == IcccmWmState::Iconic as u32
+                {
                     conn.change_property32(
                         PropMode::Replace,
                         event.window,
                         atoms.WM_STATE,
                         atoms.WM_STATE,
-                        &[IcccmWmState::Normal as u32, 0]
+                        &[IcccmWmState::Normal as u32, 0],
                     )?;
                     conn.flush()?;
                 }
-            },
-            _ => (),
+            }
+            _ => {}
         }
     }
 }
