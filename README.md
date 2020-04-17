@@ -1,6 +1,6 @@
 # uniconize
 
-This is fix for Wine games blackscreening on sway and other tiling window
+This a is fix for Wine games blackscreening on sway and other tiling window
 managers that don't support iconized windows.
 
 ### Explanation
