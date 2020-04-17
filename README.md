@@ -3,7 +3,20 @@
 This a is fix for Wine games blackscreening on sway and other tiling window
 managers that don't support iconized windows.
 
-### Explanation
+## Installation
+
+- Manual: Make sure you have a recent Rust toolchain. Clone this repo, then run
+  `cargo install --path .`.
+- [crates.io](https://crates.io/crates/uniconize): `cargo install uniconize`
+- Arch Linux: [AUR package](https://aur.archlinux.org/packages/uniconize/)
+- Other distros: make a pull request to add your package or build script!
+
+## Usage
+
+Just run this program! On sway, you'll want to throw `exec uniconize` somewhere
+in your configuration. There are no options.
+
+## Explanation
 
 i3 and sway are tiling window managers and do not support iconized windows by
 design. Unfortunately for them, [the ICCCM standard][icccm] says that they must.
