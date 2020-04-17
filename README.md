@@ -1,12 +1,12 @@
-# uniconize
+# uniconize (not a unicorn)
 
 This a is fix for Wine games blackscreening on sway and other tiling window
 managers that don't support iconized windows.
 
 ## Installation
 
-- Manual: Make sure you have a recent Rust toolchain. Clone this repo, then run
-  `cargo install --path .`.
+- Manual: with a recent Rust toolchain and a fresh clone of this repo,
+  `cargo install --path .`
 - [crates.io](https://crates.io/crates/uniconize): `cargo install uniconize`
 - Arch Linux: [AUR package](https://aur.archlinux.org/packages/uniconize/)
 - Other distros: make a pull request to add your package or build script!
