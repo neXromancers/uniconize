@@ -7,9 +7,18 @@ managers that don't support iconized windows.
 
 - Manual: with a recent Rust toolchain and a fresh clone of this repo,
   `cargo install --path .`
-- [crates.io](https://crates.io/crates/uniconize): `cargo install uniconize`
-- Arch Linux: [AUR package](https://aur.archlinux.org/packages/uniconize/)
+- [crates.io][]: [`cargo install uniconize`][crates.io uniconize]
+- Arch Linux: [AUR][] package [`uniconize`][Arch+AUR uniconize]
+- Nixpkgs: [NUR][] package
+  [`pkgs.nur.repos.nexromancers.uniconize`][Nixpkgs+NUR uniconize]
 - Other distros: make a pull request to add your package or build script!
+
+[crates.io]: https://crates.io/
+[crates.io uniconize]: https://crates.io/crates/uniconize
+[AUR]: https://aur.archlinux.org/
+[Arch+AUR uniconize]: https://aur.archlinux.org/packages/uniconize/
+[NUR]: https://github.com/nix-community/NUR
+[Nixpkgs+NUR uniconize]: https://github.com/neXromancers/nixromancers/tree/master/pkgs/tools/misc/uniconize/generic.nix
 
 ## Usage
 
