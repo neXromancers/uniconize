@@ -3,9 +3,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 use x11rb::connection::Connection;
-use x11rb::generated::xproto::*;
+use x11rb::protocol::{Event, xproto::*};
 use x11rb::wrapper::ConnectionExt as _;
-use x11rb::x11_utils::Event;
 
 // Lifted from XCB headers, see https://github.com/psychon/x11rb/issues/164
 #[allow(dead_code)]
@@ -33,10 +32,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     conn.flush()?;
 
     loop {
-        let event = conn.wait_for_event()?;
-        match event.response_type() {
-            CLIENT_MESSAGE_EVENT => {
-                let event: ClientMessageEvent = event.into();
+        match conn.wait_for_event()? {
+            Event::ClientMessage(event) => {
                 if event.type_ == atoms.WM_CHANGE_STATE
                     && event.data.as_data32()[0] == IcccmWmState::Iconic as u32
                 {
