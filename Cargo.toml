@@ -9,5 +9,6 @@ repository = "https://github.com/neXromancers/uniconize"
 
 [dependencies.x11rb]
 version = "0.4"
+# Disable the "allow-unsafe-code" feature and the libxcb dependency
 default-features = false
 features = ["vendor-xcb-proto"]
