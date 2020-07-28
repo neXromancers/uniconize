@@ -1,3 +1,12 @@
+# Deprecation notice
+
+This program is no longer needed because wlroots and sway have gained the
+necessary functionality to fix the problem on their own. 🥳
+
+- [sway bug](https://github.com/swaywm/sway/issues/4324)
+- [wlroots PR](https://github.com/swaywm/wlroots/pull/2337)
+- [sway PR](https://github.com/swaywm/sway/pull/5566)
+
 # uniconize (not a unicorn)
 
 This a is fix for Wine games blackscreening on sway and other tiling window
